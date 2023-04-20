@@ -1,4 +1,4 @@
-<x-layouts.main.main>
+<x-layouts.main.main title="Home">
     <div class="contents_wrap">
         <div class="main_banner_wrap por">
             <img src="https://cdn2.pointblank.id/Web/upload/image/20230324/112513394.jpg" alt="main_visual" class="pc">
