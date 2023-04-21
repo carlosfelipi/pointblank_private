@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sub.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/shop.css') }}" />
+
 </head>
 
 <body>
@@ -19,12 +20,11 @@
         {{ $slot }}
         <x-layouts.main.partials.footer />
     </div>
-    <x-alerts.sweet />
     <script type="text/javascript" src="{{ asset('assets/js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/bxslider.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/slick.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/global.js') }}"></script>
-
+    <x-alerts.toast />
 </body>
 
 </html>

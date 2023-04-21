@@ -42,10 +42,11 @@
                 </article>
             </article>
         </div>
+        
         <x-layouts.auth.partials.footer />
-        <x-alerts.sweet />
         <script type="text/javascript" src="{{ asset('assets/js/jquery.js') }}"></script>
         <script type="text/javascript" src="{{ asset('assets/js/global.js') }}"></script>
+        <x-alerts.toast />
         {{ $js ?? '' }}
     </div>
 </body>

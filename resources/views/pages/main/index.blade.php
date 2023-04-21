@@ -8,27 +8,22 @@
                 <div class="new_banner_wrap">
                     <div class="new_pager"></div>
                     <ul class="new_banner">
-                        <li><a href="https://www.pointblank.id/news/view?idx=3903&page=1" target="_SELF"><img
-                                    src="https://cdn2.pointblank.id/Web/upload/image/20230419/165916958.jpg"
-                                    alt="Main Banner"></a></li>
-                        <li><a href="https://www.pointblank.id/news/view?idx=3902&page=1" target="_SELF"><img
-                                    src="https://cdn2.pointblank.id/Web/upload/image/20230419/165855240.jpg"
-                                    alt="Main Banner"></a></li>
-                        <li><a href="https://pointblank.id/news/view?idx=3897&page=1" target="_SELF"><img
-                                    src="https://cdn2.pointblank.id/Web/upload/image/20230417/174816159.jpg"
-                                    alt="Main Banner"></a></li>
-                        <li><a href=" https://pointblank.id/news/view?idx=3896&page=1" target="_SELF"><img
-                                    src="https://cdn2.pointblank.id/Web/upload/image/20230417/174851223.jpg"
-                                    alt="Main Banner"></a></li>
-                        <li><a href="https://pointblank.id/news/view?idx=3895&page=1" target="_SELF"><img
-                                    src="https://cdn2.pointblank.id/Web/upload/image/20230417/182822332.jpg"
-                                    alt="Main Banner"></a></li>
-                        <li><a href="https://pointblank.id/news/view?idx=3894&page=1" target="_SELF"><img
-                                    src="https://cdn2.pointblank.id/Web/upload/image/20230417/174940060.jpg"
-                                    alt="Main Banner"></a></li>
-                        <li><a href="https://pointblank.id/news/view?idx=3893&page=1" target="_SELF"><img
-                                    src="https://cdn2.pointblank.id/Web/upload/image/20230417/175010742.jpg"
-                                    alt="Main Banner"></a></li>
+                        <li>
+                            <a href="" target="_SELF">
+                                <img src="https://pbglobal1.com/images/evo.png" alt="Main Banner" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_SELF">
+                                <img src="https://pbglobal1.com/images/CASH01.png" alt="Main Banner" />
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" target="_SELF">
+                                <img src="https://pbglobal1.com/images/love.png" alt="Main Banner" />
+                            </a>
+                        </li>
+
                     </ul>
 
                     <div class="badge">
@@ -40,7 +35,7 @@
                 <div class="main_quick"></div>
             </div>
         </div><!-- //main_banner_wrap -->
-   
+
         <section class="premium_shop">
             <div class="inner">
                 <div class="main_tit">PREMIUM SHOP <a href="/shop/list" class="more_btn">LIHAT SEMUA PROMO </a></div>
@@ -339,6 +334,6 @@
                 </ul>
             </div>
         </div> <!-- //main_rank -->
-      
+
     </div>
 </x-layouts.main.main>

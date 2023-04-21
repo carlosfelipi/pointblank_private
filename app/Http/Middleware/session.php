@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Controllers\Modules\Toast;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,7 @@ class session
         if (Auth::check() != true) {
             return $next($request);
         } else {
-            return redirect()->back()->withToastWarning('Atención ' . Auth::user()->login . ' ¡Ya se ha autentificado!');
+            return redirect('/')->with('message', Toast::Alert(["msg" => "Atención " . Auth::user()->login . " ¡Ya se ha autentificado!'", "type" => "success"]));
         }
     }
 }

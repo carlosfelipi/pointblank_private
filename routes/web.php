@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Pages\Auth\Confirm;
+use App\Http\Controllers\Pages\Auth\Login;
 use App\Http\Controllers\Pages\Auth\Logout;
 use App\Http\Controllers\Pages\Auth\Register;
+use App\Http\Controllers\Pages\Event\Battle;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -18,11 +20,16 @@ use RealRashid\SweetAlert\Facades\Alert;
 */
 
 Route::get('/', function () {
-    toast('Your Post as been submited!','success');
+    notify()->success('Welcome to Laravel Notify ⚡️');
     return view('pages.main.index');
 })->name('indexPage');
 
+
+Route::get('event/landing', Battle::class)->name('eventBattlePage');
+
+
 Route::prefix('member')->group(function () {
+    Route::get('login', Login::class)->middleware('session')->name('loginPage');
     Route::get('register', Register::class)->middleware('session')->name('registerPage');
     Route::get('confirm/account/{token}', [Confirm::class, 'confirmProccess'])->middleware('session')->name('confirmProccess');
     Route::get('logout', [Logout::class, 'logoutProccess'])->middleware('auth')->name('logoutProccess');

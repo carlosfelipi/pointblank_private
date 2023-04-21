@@ -17,39 +17,45 @@ class Register extends Component
 
     private $hash, $token;
 
-    protected $rules = [
-        'login' => 'required|max:16|min:5|unique:accounts,login|unique:accounts_temporary,login|regex:/(^[a-za-z0-9 ]+$)+/',
-        'email' => 'required|unique:accounts,login|unique:accounts_temporary,email|email',
-        'password' => 'required|max:16|min:5|regex:/(^[a-za-z0-9 ]+$)+/',
-        'confirm' => 'required|max:16|min:5|regex:/(^[a-za-z0-9 ]+$)+/|same:password',
-        'term' => 'required'
-    ];
-
-    protected $messages = [
-        'login.required' => 'El usuario debe ser llenado.',
-        'login.min' => 'El usuario debe tener al menos :min caracteres.',
-        'login.max' => 'El usuario solo puede tener un máximo de :max caracteres.',
-        'login.unique' => 'El usuario ya existe, prueba con otro.',
-        'login.regex' => 'El usuario solo puede tener letras minúsculas.',
-        'email.required' => 'El correo electrónico debe ser completado.',
-        'email.unique' => 'El correo electrónico ya está en uso, prueba con otro.',
-        'email.email' => 'Formato de correo inválido.',
-        'password.required' => 'La contraseña debe ser completada.',
-        'password.min' => 'La contraseña debe tener al menos :min caracteres.',
-        'password.max' => 'La contraseña solo puede tener un máximo de :max caracteres.',
-        'password.regex' => 'La contraseña solo puede tener letras minúsculas.',
-        'confirm.required' => 'Es necesario completar la confirmación de la contraseña.',
-        'confirm.min' => 'La confirmación de la contraseña debe tener al menos :min caracteres de longitud.',
-        'confirm.max' => 'La confirmación de contraseña solo puede tener un máximo de :max caracteres.',
-        'confirm.regex' => 'La confirmación de la contraseña solo puede contener letras minúsculas.',
-        'confirm.same' => 'Las contraseñas no coinciden.',
-        'term.required' => 'Necesitas aceptar los términos de uso.'
-    ];
-
     public function __construct()
     {
         $this->hash = new Hmac;
         $this->token = new Token;
+    }
+
+    public function rules(): array
+    {
+        return [
+            'login' => 'required|max:16|min:5|unique:accounts,login|unique:accounts_temporary,login|regex:/(^[a-za-z0-9 ]+$)+/',
+            'email' => 'required|unique:accounts,login|unique:accounts_temporary,email|email',
+            'password' => 'required|max:16|min:5|regex:/(^[a-za-z0-9 ]+$)+/',
+            'confirm' => 'required|max:16|min:5|regex:/(^[a-za-z0-9 ]+$)+/|same:password',
+            'term' => 'required'
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'login.required' => 'El usuario debe ser llenado.',
+            'login.min' => 'El usuario debe tener al menos :min caracteres.',
+            'login.max' => 'El usuario solo puede tener un máximo de :max caracteres.',
+            'login.unique' => 'El usuario ya existe, prueba con otro.',
+            'login.regex' => 'El usuario solo puede tener letras minúsculas.',
+            'email.required' => 'El correo electrónico debe ser completado.',
+            'email.unique' => 'El correo electrónico ya está en uso, prueba con otro.',
+            'email.email' => 'Formato de correo inválido.',
+            'password.required' => 'La contraseña debe ser completada.',
+            'password.min' => 'La contraseña debe tener al menos :min caracteres.',
+            'password.max' => 'La contraseña solo puede tener un máximo de :max caracteres.',
+            'password.regex' => 'La contraseña solo puede tener letras minúsculas.',
+            'confirm.required' => 'Es necesario completar la confirmación de la contraseña.',
+            'confirm.min' => 'La confirmación de la contraseña debe tener al menos :min caracteres de longitud.',
+            'confirm.max' => 'La confirmación de contraseña solo puede tener un máximo de :max caracteres.',
+            'confirm.regex' => 'La confirmación de la contraseña solo puede contener letras minúsculas.',
+            'confirm.same' => 'Las contraseñas no coinciden.',
+            'term.required' => 'Necesitas aceptar los términos de uso.'
+        ];
     }
 
     public function updated($propertyName)
