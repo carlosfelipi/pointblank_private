@@ -109,7 +109,7 @@ button {
     display: block;
     font-size: 10px;
     font-weight: 500;
-    font-family: "Roboto";
+font-family: "Kdam Thmor Pro";
     border-radius: 4px;
     border: 1px solid #aaaaaa;
 }
@@ -319,7 +319,7 @@ button {
     top: -4px;
     right: 3px;
     font-size: 10px;
-    font-family: "Teko";
+    font-family: "Kdam Thmor Pro";
     font-weight: bold;
 }
 .shop_item_no {
@@ -391,7 +391,7 @@ button {
     display: block;
     font-size: 10px;
     font-weight: 500;
-    font-family: "Roboto";
+font-family: "Kdam Thmor Pro";
 }
 .premium_shop .main_tit .more_btn:hover {
     color: #000000;
@@ -1001,7 +1001,7 @@ button {
     width: 58px;
     height: 22px;
     color: #fff;
-    font-family: OSWALD, san-serif;
+  font-family: "Kdam Thmor Pro";
     font-size: 1.4rem;
     text-align: center;
     text-transform: uppercase;
@@ -1130,7 +1130,7 @@ button {
     top: 9px;
     left: 5px;
     color: #fff;
-    font-family: oswald, san-serif;
+  font-family: "Kdam Thmor Pro";
     font-size: 1.2rem;
     text-align: center;
 }
@@ -1403,7 +1403,7 @@ button {
     width: 58px;
     height: 22px;
     color: #fff;
-    font-family: OSWALD, san-serif;
+  font-family: "Kdam Thmor Pro";
     font-size: 1.4rem;
     line-height: 2rem;
     text-align: center;
@@ -2732,7 +2732,7 @@ button {
     padding: 2px 4px;
     margin: 3px;
     position: relative;
-    font-family: "oswald";
+   font-family: "Kdam Thmor Pro";
     font-weight: 400;
 }
 .pay_wrap .list .item .cont .item_info .con .name span.randombox {
@@ -2841,7 +2841,7 @@ button {
     margin: 3px;
     top: 5px;
     position: relative;
-    font-family: "oswald";
+   font-family: "Kdam Thmor Pro";
     font-weight: 400;
 }
 .info span.randombox {
@@ -2955,7 +2955,7 @@ button {
     padding: 2px 4px;
     margin: 3px;
     position: relative;
-    font-family: "oswald";
+   font-family: "Kdam Thmor Pro";
     font-weight: 400;
 }
 .complete_wrap .list .item .cont .item_info .con .name span.randombox {
@@ -3013,7 +3013,7 @@ button {
 }
 .total_payment .money {
     font-size: 26px;
-    font-family: "Oswald";
+   font-family: "Kdam Thmor Pro";
 }
 .total_payment .money img {
     vertical-align: middle;

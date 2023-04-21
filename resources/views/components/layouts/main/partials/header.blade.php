@@ -111,13 +111,37 @@
                 <li class="depth1"><a href="/shop/list" data-content="Premiun Shop">PREMIUM SHOP</a></li>
             </ul>
         </nav>
-        <div class="login_box">
-            <ul>
-                <li class="signup"><a href="/member/signup">REGISTRASI</a></li>
-                <li class="login"><a href="/login/form">LOGIN</a></li>
-
-            </ul>
-        </div>
+        @auth
+            <div class="login_box" style="opacity: 0;">
+                <ul>
+                    <li class="my_account">
+                        <div class="my_account_wrap">
+                            <a href="/ph/mypage/info" class="my_account_btn">{{ auth()->user()->login }}</a>
+                            <ul class="my_account_list">
+                                <li><a href="/ph/mypage/info">INFO</a></li>
+                                <li><a href="/ph/ticket/list">TICKET</a></li>
+                                <li><a href="/ph/game/profile">PROFILE</a></li>
+                                <li><a href="/ph/mypage/esports">E-SPORTS</a></li>
+                                <li><a href="/ph/mypage/notifications">NOTIFICATIONS</a></li>
+                                <li><a href="/ph/topup/auth">PB TOP UP VOUCHER</a></li>
+                                <li><a href="{{ route('logoutProccess') }}">LOGOUT</a></li>
+                            </ul>
+                        </div>
+                        <div class="my_noti"><a href="/ph/mypage/notifications"><img src="/assets/img/btn_account.png"
+                                    alt="btn_account"><span class="num">2</span></a></div>
+                    </li>
+                    <li class="login logout"><a href="{{ route('logoutProccess') }}">LOGOUT</a></li>
+                </ul>
+            </div>
+        @endauth
+        @guest
+            <div class="login_box">
+                <ul>
+                    <li class="signup"><a href="{{ route('registerPage') }}">REGISTRASI</a></li>
+                    <li class="login"><a href="/login/form">LOGIN</a></li>
+                </ul>
+            </div>
+        @endguest
     </div> <!-- //header_wrap -->
     <div class="quick">
         <div class="dst">

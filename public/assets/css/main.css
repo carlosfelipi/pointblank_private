@@ -1,3 +1,4 @@
+
 .main_banner {
     position: absolute;
     top: 0;
@@ -170,7 +171,7 @@
     color: #dd0000;
 }
 .main_notice .mn_list .mn_con .mn_txt {
-    font-family: "Roboto";
+   font-family: "Kdam Thmor Pro";
     height: 6.3rem;
     color: #666666;
     overflow: hidden;
@@ -185,7 +186,7 @@
     border-top: 1px solid #eaeaea;
 }
 .main_notice .mn_list .mn_go > li a {
-    font-family: "Roboto";
+   font-family: "Kdam Thmor Pro";
     padding: 0 5rem 0 2.5rem;
     line-height: 6.1rem;
     display: block;
@@ -265,7 +266,7 @@
     background: url(../img/btn_play.png) no-repeat 0 0;
 }
 .main_vod .slick-initialized .slick-slide.vod_li a h3 {
-    font-family: "Roboto";
+   font-family: "Kdam Thmor Pro";
     color: #cccccc;
     font-size: 1.4rem;
     display: block;
@@ -352,7 +353,7 @@
     display: block;
     border: 1px solid #aaaaaa;
     color: #888;
-    font-family: "Roboto";
+   font-family: "Kdam Thmor Pro";
     font-size: 10px;
     border-radius: 5px;
     top: 0;
@@ -377,7 +378,7 @@
 .main_table th {
     font-size: 1.5rem;
     padding: 2rem;
-    font-family: "Roboto";
+   font-family: "Kdam Thmor Pro";
 }
 .main_table th {
     text-align: center;

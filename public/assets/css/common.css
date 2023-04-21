@@ -1,5 +1,67 @@
 @charset "utf-8";
-@import url("https://fonts.googleapis.com/css?family=Oswald:300,400,500,600|Roboto:300,400,500,700,900&display=swap");
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+@import url("/assets/css/preloader.css");
+
+/* Fonts Web site */
+@font-face {
+    font-family: "Kdam Thmor Pro";
+    font-style: normal;
+    font-weight: 400;
+    url(/assets/fonts/Kdam/Kdam.ttf) format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+        U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: "Kdam Thmor Pro";
+    font-style: normal;
+    font-weight: 400;
+        url(/assets/fonts/Kdam/Kdam.ttf) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: "Kdam Thmor Pro";
+    font-style: normal;
+    font-weight: 500;
+    src: local("Roboto Medium"), local("Roboto-Medium"),
+        url(/assets/fonts/Kdam/Kdam.ttf) format("woff2");
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+        U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+    font-family: "Kdam Thmor Pro";
+    font-style: normal;
+    font-weight: 500;
+    src: local("Roboto Medium"), local("Roboto-Medium"),
+        url(/assets/fonts/Kdam/Kdam.ttf) format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+        U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
+        U+2215, U+FEFF, U+FFFD;
+}
+
+/* Style scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: blue orange;
+}
+
+*::-webkit-scrollbar {
+    width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #151515;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #99000099;
+    border-radius: 20px;
+    border: 2px solid #990000;
+}
 
 /* reset */
 body,
@@ -59,8 +121,7 @@ textarea,
 button {
     line-height: 1.2;
     color: #000;
-    font-family: "Oswald", "Roboto", HelveticaNeue-Light, AppleSDGothicNeo-Light,
-        sans-serif;
+    font-family: "Kdam Thmor Pro";
     font-size: 1.6rem;
 }
 a {
@@ -424,7 +485,7 @@ body {
 }
 
 .rbt {
-    font-family: "Roboto";
+    font-family: "Kdam Thmor Pro";
 }
 
 .ptb10 {
@@ -991,7 +1052,7 @@ nav > ul > li > a[data-content="Premiun Shop"] {
 .pc .login_box .my_account_wrap > a {
     font-size: 1.4rem;
     color: #bbb;
-    font-family: "Roboto";
+    font-family: "Kdam Thmor Pro";
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -1038,7 +1099,7 @@ nav > ul > li > a[data-content="Premiun Shop"] {
     position: relative;
 }
 .pc .login_box .my_noti .num {
-    font-family: "Roboto";
+    font-family: "Kdam Thmor Pro";
     position: absolute;
     left: 10px;
     top: -8px;
@@ -1647,13 +1708,13 @@ footer .foo02_text {
     font-size: 1.35rem;
     color: #aaaaaa;
     margin: 2.4rem 0 0.8rem;
-    font-family: "Roboto";
+    font-family: "Kdam Thmor Pro";
     letter-spacing: 0.2px;
 }
 footer .foo_copy {
     font-size: 1.2rem;
     color: #555555;
-    font-family: "Roboto";
+    font-family: "Kdam Thmor Pro";
 }
 footer .foo02_text .pcol:hover {
     color: #fff;
@@ -1878,8 +1939,7 @@ footer .foo02_text .pcol:hover {
     background: url("../img/page_arr_rr.png") center center no-repeat;
 }
 .paging_wrap li.first:hover a {
-    background: #e0e0e0 url("../img/page_arr_ll_on.png") center center
-        no-repeat;
+    background: #e0e0e0 url("../img/page_arr_ll_on.png") center center no-repeat;
 }
 .paging_wrap li.prev:hover a {
     background: #e0e0e0 url("../img/page_arr_l_on.png") center center no-repeat;
@@ -1888,8 +1948,7 @@ footer .foo02_text .pcol:hover {
     background: #e0e0e0 url("../img/page_arr_r_on.png") center center no-repeat;
 }
 .paging_wrap li.last:hover a {
-    background: #e0e0e0 url("../img/page_arr_rr_on.png") center center
-        no-repeat;
+    background: #e0e0e0 url("../img/page_arr_rr_on.png") center center no-repeat;
 }
 
 .loding {

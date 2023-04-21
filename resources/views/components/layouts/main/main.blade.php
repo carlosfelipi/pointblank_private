@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ $title }}</title>
+    <title>{{ $config->name }} {{ $title }}</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/common.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/sub.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}" />
@@ -13,18 +13,18 @@
 </head>
 
 <body>
-
+    <x-layouts.main.partials.preloader />
     <div id="container">
         <x-layouts.main.partials.header />
         {{ $slot }}
         <x-layouts.main.partials.footer />
     </div>
-
+    <x-alerts.sweet />
     <script type="text/javascript" src="{{ asset('assets/js/jquery.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/bxslider.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/slick.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/global.js') }}"></script>
-    
+
 </body>
 
 </html>

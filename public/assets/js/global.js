@@ -352,3 +352,23 @@ function ranktab() {
         $(".main_rank ul.rank_table li").eq(ques.index()).stop().fadeIn(200);
     });
 }
+
+function switchPwd(id) {
+    if ($("#" + id).attr("type") == "password") {
+        $("#" + id).attr("type", "text");
+        $("#" + id)
+            .parent(".in_btn")
+            .find("img")
+            .attr("src", "/assets/img/icon_eye_no_rd.png");
+    } else {
+        $("#" + id).attr("type", "password");
+        $("#" + id)
+            .parent(".in_btn")
+            .find("img")
+            .attr("src", "/assets/img/icon_eye_rd.png");
+    }
+}
+
+setTimeout(function () {
+    document.querySelector(".preloader").classList.add("preloader-none");
+}, 1000);
