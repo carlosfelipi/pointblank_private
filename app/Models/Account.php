@@ -60,7 +60,9 @@ class Account extends Model
         'totalkills_count',
         'totalfights_count',
         'status',
-        'last_login'
+        'last_login',
+        'token',
+        'created_at'
        
     ];
 }
