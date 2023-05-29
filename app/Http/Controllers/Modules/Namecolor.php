@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\Modules;
 
 use App\Http\Controllers\Controller;
-
+//use Illuminate\Http\Request;
 
 class Namecolor extends Controller
 {
-    public static function color($namecolor)
+    public function color($namecolor)
     {
         switch ($namecolor) {
             case 0:

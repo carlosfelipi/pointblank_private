@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Modules;
 
 use App\Http\Controllers\Controller;
+//use Illuminate\Http\Request;
 
 class Date extends Controller
 {
@@ -36,34 +37,6 @@ class Date extends Controller
         }
     }
 
-    public function memberCounter($date)
-    {
-        $diff = time() - $date;
-        $seconds = $diff;
-        $minutes = round($diff / 60);
-        $hours = round($diff / 3600);
-        $days = round($diff / 86400);
-        $weeks = round($diff / 604800);
-        $months = round($diff / 2419200);
-        $years = round($diff / 29030400);
-
-        if ($seconds <= 60) {
-            return "$seconds segundos";
-        } elseif ($minutes <= 60) {
-            return $minutes == 1 ? 'um minuto ' : $minutes . ' minutos';
-        } elseif ($hours <= 24) {
-            return $hours == 1 ? 'uma hora' : $hours . ' horas';
-        } elseif ($days <= 7) {
-            return $days == 1 ? 'um dia' : $days . ' dias';
-        } elseif ($weeks <= 4) {
-            return $weeks == 1 ? 'uma semana' : $weeks . ' semanas';
-        } elseif ($months <= 12) {
-            return $months == 1 ? 'um mês' : $months . ' meses';
-        } else {
-            return $years == 1 ? 'um ano' : $years . ' anos';
-        }
-    }
-
     public function fixDate($str, $pos, $c)
     {
         return substr($str, 0, $pos) . $c . substr($str, $pos);
@@ -90,11 +63,12 @@ class Date extends Controller
         return 'Membro desde:' . $d . ' de ' . $this->month($m) . ' de ' . $y . ' ás ' . $h . ':' . $i . '';
     }
 
-    public function CreatedClan($Date)
+    public function dateBlog($date)
     {
-        $D = date("d", strtotime($Date));
-        $M = date("m", strtotime($Date));
-        $Y = date("Y", strtotime($Date));
-        return '' . $D . ' de ' . $this->month($M) . ' de ' . $Y;
+        $d = date("d", strtotime($date));
+        $m = date("m", strtotime($date));
+        $y = date("Y", strtotime($date));
+        return $d . ' de ' . $this->month($m) . ' de ' . $y;
     }
+    
 }

@@ -8,11 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Account extends Model
 {
     use HasFactory;
-    
-    public $timestamps = false;
-    
-    protected $primaryKey = 'player_id';
 
+    public $timestamps = false;
+    protected $primaryKey = 'player_id';
     protected $fillable = [
         'login',
         'password',
@@ -61,8 +59,16 @@ class Account extends Model
         'totalfights_count',
         'status',
         'last_login',
-        'token',
-        'created_at'
-       
+        'clan_game_pt',
+        'clan_wins_pt',
+        'last_mac',
+        'ban_obj_id',
+        'access_admin',
+        'remember_token',
+        'remember_date',
+        'created_at',
+        'access_admin',
+        'coin',
+        'provider'
     ];
 }

@@ -2,13 +2,12 @@
 
 namespace App\Http\Middleware;
 
-use App\Http\Controllers\Modules\Toast;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
-class session
+class Session
 {
     /**
      * Handle an incoming request.
@@ -20,7 +19,7 @@ class session
         if (Auth::check() != true) {
             return $next($request);
         } else {
-            return redirect('/')->with('message', Toast::Alert(["msg" => "Atención " . Auth::user()->login . " ¡Ya se ha autentificado!'", "type" => "success"]));
+            return redirect()->back()->with('toast_error', 'Atenção ' . Auth::user()->login . ' você não pode acessar essa página logado!');
         }
     }
 }

@@ -2,44 +2,32 @@
 
 namespace App\Http\Controllers\Pages\Auth;
 
-use App\Http\Controllers\Modules\Hmac;
-use App\Http\Controllers\Modules\Toast;
+use App\Http\Controllers\Modules\Message;
 use App\Models\Account;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Login extends Component
 {
+
     public $login, $password;
-    private $hash;
 
-    public function __construct()
-    {
-        $this->hash = new Hmac;
-    }
+    protected $rules = [
+        'login' => 'required|max:16|min:5|exists:accounts,login|regex:/(^[a-za-z0-9 ]+$)+/',
+        'password' => 'required|max:16|min:5|regex:/(^[a-za-z0-9 ]+$)+/'
+    ];
 
-    public function rules(): array
-    {
-        return [
-            'login' => 'required|max:16|min:5|exists:accounts,login|regex:/(^[a-za-z0-9 ]+$)+/',
-            'password' => 'required|max:16|min:5|regex:/(^[a-za-z0-9 ]+$)+/',
-        ];
-    }
-
-    public function messages(): array
-    {
-        return [
-            'login.required' => 'El usuario debe ser llenado.',
-            'login.min' => 'El usuario debe tener al menos :min caracteres.',
-            'login.max' => 'El usuario solo puede tener un máximo de :max caracteres.',
-            'login.exists' => 'Usuario no válido o no existe.',
-            'login.regex' => 'El usuario solo puede tener letras minúsculas.',
-            'password.required' => 'La contraseña debe ser completada.',
-            'password.min' => 'La contraseña debe tener al menos :min caracteres.',
-            'password.max' => 'La contraseña solo puede tener un máximo de :max caracteres.',
-            'password.regex' => 'La contraseña solo puede tener letras minúsculas.' 
-        ];
-    }
+    protected $messages = [
+        'login.required' => 'O usuário precisa ser preenchido.',
+        'login.min' => 'O usuário precisa ter no mínimo :min caracteres.',
+        'login.max' => 'O usuário só pode ter no máximo :max caracteres.',
+        'login.exists' => 'Usuário inválido ou não existe.',
+        'login.regex' => 'O usuário só pode ter letras minúsculas.',
+        'password.required' => 'A senha precisa ser preenchido.',
+        'password.min' => 'A senha precisa ter no mínimo :min caracteres.',
+        'password.max' => 'A senha só pode ter no máximo :max caracteres.',
+        'password.regex' => 'A senha só pode ter letras minúsculas.'
+    ];
 
     public function updated($propertyName)
     {
@@ -49,23 +37,22 @@ class Login extends Component
     public function loginProccess()
     {
         $validatedData = $this->validate();
-        $player = Account::query()->where('login', $validatedData['login'])->firstOrFail();
-        if ($this->hash->hmac($validatedData['password']) === $player->password) {
+        $player = Account::where('login', $validatedData['login'])->firstOrFail();
+        if ($this->hash->md5($validatedData['password']) === $player->password) {
             if ($player->access_level >= 0) {
                 Auth::loginUsingId($player->player_id);
-                return redirect('/')->with('message', Toast::Alert(["msg" => "Bienvenido ".$player->login, "type" => "success"]));
+                return redirect()->route('indexPage')->with('message', Message::sendAlert(["msg" => "Bem vindo soldado $player->login!", "type" => "success"]));
             } else {
-                $this->addError('login', 'Su cuenta está bloqueada.');
+                $this->addError('login', 'Sua conta está bloqueada.');
             }
         } else {
-            $this->addError('password', 'Tu contraseña es incorrecta.');
+            $this->addError('password', 'Sua senha está incorreta.');
         }
     }
 
     public function render()
     {
-        return view('pages.auth.login')->layout('components.layouts.auth.auth', [
-            'title' => 'Login'
-        ]);
+        //dd($this->hash->md5('cddancddan'));
+        return view('pages.auth.login');
     }
 }

@@ -8,18 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Temporary extends Model
 {
     use HasFactory;
-    
-    public $timestamps = false;
-
     protected $table = 'accounts_temporary';
-
+    public $timestamps = false;
     protected $fillable = [
         'login',
         'password',
         'email',
         'token',
         'created_at',
-        'updated_at',
         'expired_at'
     ];
 }

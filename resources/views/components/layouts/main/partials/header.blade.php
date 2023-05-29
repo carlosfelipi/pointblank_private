@@ -1,145 +1,196 @@
-<header id="header" class="pc">
-    <div class="header_wrap clr">
-        <h1>
-            <a href="/">
-                <img src="{{ asset('assets/img/logo_pointblank.png') }}" title="{{ $config->name }}"
-                    alt="logo_pointblank" />
-            </a>
-        </h1>
-        <a href="#" class="m_menu">
-            <img src="{{ asset('assets/img/btn_menu.png') }}" alt="mobile menu" />
-        </a>
-        <a href="#" class="m_user">
-            <img src="{{ asset('assets/img/btn_user.png') }}" alt="mobile user" />
-        </a>
-        <nav class="gnb">
-            <ul>
-                <li class="depth1 in_ul">
-                    <a href="{{ route('indexPage') }}" data-content="Comenzar">Comenzar</a>
-                </li>
-
-                <li class="depth1"><a href="/news/list" data-content="Noticias">Noticias</a></li>
-
-                <li class="depth1"><a href="/faq/list" data-content="Descargar">Descargar</a></li>
-
-                <li class="depth1 in_ul">
-                    <a href="/ranking/individual/list" data-content="Ranking">RANK</a>
-                    <ul class="depth2">
-                        <li class="line2"><a href="/ranking/individual/list"><img
-                                    src="{{ asset('assets/img/ico_2depth_individual.png') }}"
-                                    alt="RANK INDIVIDU"><span>RANK<br>
-                                    INDIVIDU</span></a>
-                        </li>
-                        <li class="line2"><a href="/ranking/clan/list"><img
-                                    src="{{ asset('assets/img/ico_2depth_clan.png') }}" alt="RANK CLAN"><span>RANK<br>
-                                    CLAN</span></a>
-                        </li>
-                        <li class="line2"><a href="/ranking/clan/map"><img
-                                    src="{{ asset('assets/img/ico_2depth_map.png') }}"
-                                    alt="RANK MAP"><span>RANK<br>MAP</span></a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="depth1 in_ul">
-                    <a href="javascript:void(0);" data-content="Forum">FORUM</a>
-                    <ul class="depth2 depth2_sns">
-                        <li>
-                            <a href="https://discord.gg/pbzepetto" target="_blank" class="discord">
-                                <img src="{{ asset('assets/img/ico_sns_discord.png') }}"
-                                    alt="DISCORD"><span>DISCORD</span>
+<header class="header-section">
+    <div class="container">
+        <div class="header-holder d-flex flex-wrap justify-content-between align-items-center">
+            <div class="brand-logo d-none d-lg-inline-block">
+                <div class="logo">
+                    <a href="{{ route('indexPage') }}">
+                        <img class="logo-header " src="{{ asset('assets/images/logo.png') }}" alt="logo" />
+                    </a>
+                </div>
+            </div>
+            <div class="header-menu-part">
+                <div class="header-top">
+                    <div class="header-top-area">
+                        <ul class="left">
+                            <li>
+                                <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                                <span>RankUp
+                                    <strong class="text-success ">
+                                        {{ number_format($global->rankup->percent_xp) }}%
+                                    </strong>
+                                </span>
+                            </li>
+                            <li>
+                                <i class="fa fa-gamepad" aria-hidden="true"></i>
+                                Onlines:
+                                <strong class="@if ($global->onlines === 0) text-danger @else text-success @endif">
+                                    {{ number_format($global->onlines) }}
+                                </strong>
+                            </li>
+                        </ul>
+                        <ul class="social-icons d-flex align-items-center">
+                            <li>
+                                <a href="{{ env('YOUTUBE_URL') }}" target="_blank" class="fb">
+                                    <i class="fa-brands fa-youtube" style="color: #ffffff;"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ env('DISCORD_URL') }}" target="_blank" class="fb">
+                                    <i class="fa-brands fa-discord" style="color: #ffffff;"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ env('FACEBOOK_URL') }}" target="_blank" class="fb">
+                                    <i class="fa-brands fa-facebook" style="color: #ffffff;"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <div class="header-wrapper justify-content-lg-end">
+                        <div class="mobile-logo d-lg-none">
+                            <a href="{{ route('indexPage') }}">
+                                <img src="{{ asset('assets/images/logo.png') }}" alt="logo">
                             </a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/PBIndonesiaZepetto/" target="_blank" class="facebook">
-                                <img src="{{ asset('assets/img/ico_sns_facebook.png') }}"
-                                    alt="FACEBOOK"><span>FACEBOOK</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/zepetto_pbindonesia" target="_blank" class="insta">
-                                <img src="{{ asset('assets/img/ico_sns_insta.png') }}"
-                                    alt="INSTAGRAM"><span>INSTAGRAM</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/c/ZepettoPBIndonesia" target="_blank" class="youtube">
-                                <img src="{{ asset('assets/img/ico_sns_youtube.png') }}"
-                                    alt="YOUTUBE"><span>YOUTUBE</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="depth1 in_ul">
-                    <a href="/clan/main" data-content="Forum">CLAN</a>
-                    <ul class="depth2 depth2_sns">
-                        <li>
-                            <a href="/clan/main" class="clanmain">
-                                <img src="{{ asset('assets/img/icon_clanmain.png') }}" alt="clanmain"><span>INFO
-                                    CLAN</span>
-                            </a>
-                        </li>
-                        <li class="line2">
-                            <a href="/clan/clanmedal" class="clanmedal">
-                                <img src="{{ asset('assets/img/ico_clanmedal.png') }}" alt="clanmedal"><span>CLAN<br>
-                                    MEDAL</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/clan/myclan" class="myclan">
-                                <img src="{{ asset('assets/img/icon_myclan.png') }}" alt="myclan"><span>MY
-                                    CLAN</span>
-                            </a>
-                        </li>
-                        <li class="line2">
-                            <a href="/clan/board/list" class="clancommunity">
-                                <img src="{{ asset('assets/img/icon_clancommunity.png') }}"
-                                    alt="clancommunity"><span>CLAN<br>COMMUNITY</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="depth1"><a href="/shop/list" data-content="Premiun Shop">PREMIUM SHOP</a></li>
-
-            </ul>
-        </nav>
-        @auth
-            <div class="login_box" style="opacity: 0;">
-                <ul>
-                    <li class="my_account">
-                        <div class="my_account_wrap">
-                            <a href="/ph/mypage/info" class="my_account_btn">{{ auth()->user()->login }}</a>
-                            <ul class="my_account_list">
-                                <li><a href="/ph/mypage/info">INFO</a></li>
-                                <li><a href="/ph/ticket/list">TICKET</a></li>
-                                <li><a href="/ph/game/profile">PROFILE</a></li>
-                                <li><a href="/ph/mypage/esports">E-SPORTS</a></li>
-                                <li><a href="/ph/mypage/notifications">NOTIFICATIONS</a></li>
-                                <li><a href="/ph/topup/auth">PB TOP UP VOUCHER</a></li>
-                                <li><a href="{{ route('logoutProccess') }}">LOGOUT</a></li>
-                            </ul>
                         </div>
-                        <div class="my_noti"><a href="/ph/mypage/notifications"><img
-                                    src="{{ asset('assets/img/btn_account.png') }}" alt="btn_account"><span
-                                    class="num">2</span></a></div>
-                    </li>
-                    <li class="login logout"><a href="{{ route('logoutProccess') }}">LOGOUT</a></li>
-                </ul>
+                        <div class="menu-area">
+                            <ul class="menu">
+                                <li>
+                                    <a href="{{ route('indexPage') }}"><small>Início</small></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">
+                                        <small>Ranking</small>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li>
+                                            <a href="{{ route('individualPage') }}">
+                                                <small>Individual</small>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('seasonPage') }}">
+                                                <small>Temporada</small>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('clanPage') }}">
+                                                <small>Clã</small>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{{ route('downloadPage') }}">
+                                        <small>Download</small>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('blogPage') }}">
+                                        <small>Notícias</small>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('statusPage') }}">
+                                        <small>Status</small>
+                                    </a>
+                                </li>
+                                @auth
+                                    <li>
+                                        <a href="{{ route('marketPage') }}">
+                                            {{-- <i class="fa fa-shopping-basket" aria-hidden="true"></i> --}}
+                                            <small style="color: goldenrod;">Mercado Shark</small>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <small>
+                                                <img width="22"
+                                                    src="{{ asset('assets/images/patents/' . Auth::user()->rank . '.png') }}" />
+                                                {{ Auth::user()->player_name ?: Auth::user()->login }}
+                                            </small>
+                                        </a>
+                                        <ul class="submenu">
+                                            @if (Auth::user()->access_admin == true)
+                                                <li>
+                                                    <a href="{{ route('indexAdminPage') }}" target="_blank">
+                                                        <small>Dashboard</small>
+                                                    </a>
+                                                </li>
+                                            @endif
+                                            {{-- <li>
+                                                <a href="">
+                                                    <small>Conta</small>
+                                                </a>
+                                            </li> --}}
+                                            <li>
+                                                <a
+                                                    href="{{ route('profilePlayerPage', ['id' => auth()->user()->player_id, 'name' => str_replace(' ', '_', strtolower(auth()->user()->login))]) }}">
+                                                    <small>Meu Ranking</small>
+                                                </a>
+                                            </li>
+                                            <li><a href="{{ route('couponPage') }}">
+                                                    <small>Cupom</small>
+                                                </a>
+                                            </li>
+                                            <li>
+
+                                            <li>
+                                                <a href="{{ route('logout') }}">
+                                                    <small>Sair</small>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                @endauth
+
+                                @guest
+                                    <a href="{{ route('loginPage') }}" class="login">
+                                        <span>
+                                            <i class="fa fa-user" aria-hidden="true"></i>
+                                            <strong>ENTRAR</strong>
+                                        </span>
+                                    </a>
+                                    <a href="{{ route('registerPage') }}" class="signup">
+                                        <span>
+                                            <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                            <strong> CADASTRAR-SE</strong>
+                                        </span>
+                                    </a>
+                                @endguest
+                            </ul>
+                            <div class="header-bar d-lg-none">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="ellepsis-bar d-lg-none">
+                                @auth
+                                    <a href="javascript:void(0);">
+                                        <small>
+                                            <img width="25"
+                                                src="{{ asset('assets/images/patents/' . Auth::user()->rank . '.png') }}" />
+                                        </small>
+                                    </a>
+                                @endauth
+                                @guest
+                                    <a href="{{ route('loginPage') }}">
+                                        <i class="fa fa-sign-in" aria-hidden="true"></i>
+                                    </a>
+                                    &nbsp;
+                                    <a href="{{ route('registerPage') }}">
+                                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                                    </a>
+                                @endguest
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        @endauth
-        @guest
-            <div class="login_box">
-                <ul>
-                    <li class="signup"><a href="{{ route('registerPage') }}">REGISTRO</a></li>
-                    <li class="login"><a href="{{ route('loginPage') }}">ACCESO</a></li>
-                </ul>
-            </div>
-        @endguest
+        </div>
     </div>
 
-    <div class="quick">
-        <x-layouts.main.partials.quick />
-    </div>
 </header>
