@@ -34,4 +34,9 @@ class Item extends Controller
             }
         }
     }
+
+    public function convertDays($count)
+    {
+        return $count * 24 * 3600;
+    }
 }

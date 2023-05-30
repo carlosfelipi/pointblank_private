@@ -121,18 +121,19 @@
                                                     </a>
                                                 </li>
                                             @endif
-                                            {{-- <li>
-                                                <a href="">
-                                                    <small>Conta</small>
-                                                </a>
-                                            </li> --}}
                                             <li>
                                                 <a
                                                     href="{{ route('profilePlayerPage', ['id' => auth()->user()->player_id, 'name' => str_replace(' ', '_', strtolower(auth()->user()->login))]) }}">
                                                     <small>Meu Ranking</small>
                                                 </a>
                                             </li>
-                                            <li><a href="{{ route('couponPage') }}">
+                                            <li>
+                                                <a href="{{ route('roulettePage') }}">
+                                                    <small>Roleta Diária</small>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ route('couponPage') }}">
                                                     <small>Cupom</small>
                                                 </a>
                                             </li>
