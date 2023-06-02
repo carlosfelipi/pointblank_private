@@ -39,7 +39,64 @@
     </section>
     <x-slot:js>
         <script>
-        
+            (function() {
+                const wheel = document.querySelector(".wheel");
+                const startButton = document.querySelector(".button");
+                const submit = "/player/roulette/proccess/spin";
+                const debug = true;
+                let deg = 0;
+                startButton.addEventListener("click", () => {
+                    $.ajax({
+                        url: submit,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(res) {
+                            if (debug == true) {
+                                console.log(res);
+                            }
+                            if (res != 10) {
+                                startButton.style.pointerEvents = "none";
+                                deg = Math.floor(5000 + res * 5000);
+                                wheel.style.transition = "all 10s ease-out";
+                                wheel.style.transform = `rotate(${deg}deg)`;
+                                wheel.classList.add("blur");
+                            } else {
+                                $.toast({
+                                    icon: "info",
+                                    loaderBg: "#d9edf7",
+                                    text: "Você já girou hoje, Volte amanhá !",
+                                    hideAfter: "5000",
+                                    showHideTransition: "plain",
+                                    position: "bottom-right",
+                                });
+                            }
+                        },
+                    });
+                });
+
+                wheel.addEventListener("transitionend", () => {
+                    wheel.classList.remove("blur");
+                    startButton.style.pointerEvents = "auto";
+                    wheel.style.transition = "none";
+                    const actualDeg = deg % 360;
+                    const submit = "/player/roulette/proccess/roulette";
+                    wheel.style.transform = `rotate(${actualDeg}deg)`;
+                    $.ajax({
+                        url: submit,
+                        type: "GET",
+                        success: function(res) {
+                            $.toast({
+                                icon: "success",
+                                loaderBg: "#d9edf7",
+                                text: res,
+                                hideAfter: "5000",
+                                showHideTransition: "plain",
+                                position: "bottom-right",
+                            });
+                        },
+                    });
+                });
+            })();
         </script>
     </x-slot:js>
 </x-layouts.main.app>

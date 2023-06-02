@@ -12,14 +12,16 @@
                                         class="theme-color text-uppercase">{{ env('APP_NAME') }}</span>,
                                     VENHA SE DIVERTIR! </h2>
                                 <p class="mb-4">Funcionalidade de nosso servidores e para sua diversão !!</p>
-                                <a href="{{ env('DISCORD_URL') }}" target="_blank" class="default-button"><span>Junte-se à
+                                <a href="{{ env('DISCORD_URL') }}" target="_blank" class="default-button"><span>Junte-se
+                                        à
                                         comunidade <i class="icofont-circled-right"></i></span></a>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="cta-thumb text-end">
                                 <img class="banner_figure"
-                                    src="https://o.remove.bg/downloads/31e1c7eb-2719-41d1-9362-270b6da1071d/Screenshot_1-removebg-preview.png" alt="gamer-img">
+                                    src="https://o.remove.bg/downloads/31e1c7eb-2719-41d1-9362-270b6da1071d/Screenshot_1-removebg-preview.png"
+                                    alt="gamer-img">
                             </div>
                         </div>
                     </div>
@@ -196,4 +198,51 @@
             </div>
         </div>
     @endif
+    <div class="product-section padding-top padding-bottom"
+        style="background: url(assets/images/banner/shop_bg.png);
+    background-size: cover;">
+        <div class="container">
+            <div class="section-header">
+                <h2>MERCADO SHARK</h2>
+            </div>
+            <div class="section-wrapper">
+                <div class="row g-4 justify-content-center">
+                    @forelse ($itens as $item)
+                        <div class="col-xl-3 col-md-4 col-sm-6 col-12">
+                            <div class="product-item">
+                                <div class="product-inner">
+                                    <div class="product-thumb">
+                                        <img src="{{ $item->image }}" title="{{ $item->item_name }}"
+                                            alt="{{ $item->item_name }}" class="w-100" />
+                                    </div>
+                                    <div class="product-content text-center p-3">
+                                        <h4>
+                                            <span class="badge badge-pill badge-success" title="EVENTO">EVENTO</span>
+                                        </h4>
+                                        <a
+                                            href="{{ route('marketDetailPage', ['item' => $item->id, 'name' => str_replace(' ', '_', strtolower($item->item_name))]) }}">
+                                            <h5 class="product-title">{{ $item->item_name }}</h5>
+                                        </a>
+                                        <h6>Categoria: <?= $modulesItem->slot($item->category) ?></h6>
+                                        <h6>
+                                            <img src="{{ asset('assets/images/coin.png') }}" />
+                                            $ {{ number_format($item->price) }}
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                    @endforelse
+                    <div class="text-center mt-5">
+                        <a href="{{ route('marketPage') }}" class="default-button">
+                            <span>Ver mais
+                                <i class="icofont-circled-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </x-layouts.main.app>

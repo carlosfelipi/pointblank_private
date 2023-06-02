@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Modules;
 
 use App\Http\Controllers\Controller;
+use DateTime;
+
 //use Illuminate\Http\Request;
 
 class Item extends Controller
@@ -28,6 +30,13 @@ class Item extends Controller
     public function convertDays($count)
     {
         return $count * 24 * 3600;
+    }
+
+    public function convertSeconds($seconds)
+    {
+        $dtF = new DateTime('@0');
+        $dtT = new DateTime("@$seconds");
+        return $dtF->diff($dtT)->format('%a');
     }
 
     public function renameItem($item)

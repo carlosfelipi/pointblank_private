@@ -16,6 +16,7 @@ use App\Http\Controllers\Pages\Auth\Social\Complete;
 use App\Http\Controllers\Pages\Blog as PagesBlog;
 use App\Http\Controllers\Pages\Download;
 use App\Http\Controllers\Pages\Index;
+use App\Http\Controllers\Pages\Market\Detail;
 use App\Http\Controllers\Pages\Market\Itens;
 use App\Http\Controllers\Pages\Player\Coupon;
 use App\Http\Controllers\Pages\Player\Roulette;
@@ -70,7 +71,8 @@ Route::prefix('ranking')->group(function () {
 });
 
 Route::prefix('market')->group(function () {
-  Route::get('/', Itens::class)->name('marketPage');
+  Route::get('itens', Itens::class)->name('marketPage');
+  Route::get('detail/{item}/{name}', Detail::class)->name('marketDetailPage');
 });
 
 Route::prefix('player')->middleware('auth')->group(function () {

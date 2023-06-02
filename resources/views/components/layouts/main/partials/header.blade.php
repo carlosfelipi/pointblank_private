@@ -101,7 +101,7 @@
                                     <li>
                                         <a href="{{ route('marketPage') }}">
                                             {{-- <i class="fa fa-shopping-basket" aria-hidden="true"></i> --}}
-                                            <small style="color: goldenrod;">Mercado Shark</small>
+                                            <small style="color: rgb(112, 105, 88);">Mercado Shark</small>
                                         </a>
                                     </li>
 

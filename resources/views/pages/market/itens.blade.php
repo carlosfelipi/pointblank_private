@@ -25,12 +25,19 @@
                 <div class="col-lg-12 col-12">
                     <article>
                         <div class="shop-title d-flex flex-wrap justify-content-between">
-                            <p>Saldo:
-                                <span style="color:{{ auth()->user()->coin <= 20 ? '#d84a4a' : '#d8b44a' }};">
-                                    {{ number_format(auth()->user()->coin) }}
-                                </span>
-                                Coin
-                            </p>
+                            @auth
+                                <p>Saldo:
+                                    <span style="color:{{ auth()->user()->coin <= 20 ? '#d84a4a' : '#d8b44a' }};">
+                                        {{ number_format(auth()->user()->coin) }}
+                                    </span>
+                                    Coin
+                                </p>
+                            @endauth
+                            @guest
+                                <p>
+                                    Para efetuar uma compra, faça o <a href="{{ route('loginPage') }}">login</a>.
+                                </p>
+                            @endguest
                             <div class="product-view-mode">
                                 <a class="active" data-target="grid">
                                     <i class="fa fa-bars" aria-hidden="true"></i>
