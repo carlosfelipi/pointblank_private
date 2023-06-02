@@ -16,9 +16,6 @@ class Index extends Controller
 {
     public function indexPage()
     {
-        //notify()->success('Welcome to Laravel Notify ⚡️');
-      //  connectify('success', 'Connection Found', 'Success Message Here');
-      emotify('success', 'You are awesome, your data was successfully created');
         return view('pages.index', [
             'players' => Account::query()->where('exp', '>=', '1000')->where('access_level', 0)->orderByDesc('exp')->limit(5)->get(),
             'clans' => Clan::query()->where('clan_exp', '>', '0')->orderByDesc('clan_exp')->limit(5)->get(),

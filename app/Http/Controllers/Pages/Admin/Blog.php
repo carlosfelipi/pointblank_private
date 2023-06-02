@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Validator;
 
 class Blog extends Controller
 {
-
     protected $rules = [
         'title' => 'required',
         'description' => 'required',
@@ -29,7 +28,7 @@ class Blog extends Controller
         'type.required' => 'Escolha um tipo de notícia.',
         'end.required' => 'Escolha uma data de encerramento.',
         'card.nullable' => 'Adicione um card para a notícia',
-        'post.required' => 'Adicione um post para a notícia.',
+        'post.required' => 'Adicione um post para a notícia.'
     ];
 
     public function blogAdminPage()

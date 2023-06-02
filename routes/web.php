@@ -4,6 +4,7 @@ use App\Http\Controllers\Pages\Admin\Blog;
 use App\Http\Controllers\Pages\Admin\Coupon\Itemcode;
 use App\Http\Controllers\Pages\Admin\Coupon\Pincode;
 use App\Http\Controllers\Pages\Admin\Index as AdminIndex;
+use App\Http\Controllers\Pages\Admin\Webshop;
 use App\Http\Controllers\Pages\Auth\ConfirmEmail;
 use App\Http\Controllers\Pages\Auth\Forgot\Password\StepOne;
 use App\Http\Controllers\Pages\Auth\Forgot\Password\StepTwo;
@@ -103,4 +104,14 @@ Route::prefix('dashboard')->middleware('admin')->group(function () {
     Route::get('list', [Blog::class, 'blogAdminListPage'])->name('blogAdminListPage');
     Route::get('edit/{id}', [Blog::class, 'blogAdminEdit'])->name('blogAdminEdit');
   });
+
+  Route::prefix('webshop')->group(function () {
+    Route::get('add', [Webshop::class, 'webShopAdminPage'])->name('webShopAdminPage');
+    Route::post('proccess/add', [Webshop::class, 'webShopProccessCreate'])->name('webShopProccessCreate');
+    Route::get('itens', [Webshop::class, 'webShopItensAdminPage'])->name('webShopItensAdminPage');
+    Route::post('proccess/delete/{id}', [Webshop::class, 'webShopProccessDelete'])->name('webShopProccessDelete');
+    Route::post('proccess/update/{id}', [Webshop::class, 'webShopProccessUpdate'])->name('webShopProccessUpdate');
+  });
+
+
 });

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="cta-wrapper item-layer">
                 <div class="cta-item px-4 px-sm-5 pt-4 pt-sm-5 pt-lg-0"
-                    style="background-image: url(/assets/images/cta/bg.jpg);">
+                    style="background-image: url(https://cdn.discordapp.com/attachments/1108843315807404052/1113978737529212948/inicial_fundo.gif);">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="cta-content">
@@ -19,7 +19,7 @@
                         <div class="col-lg-6">
                             <div class="cta-thumb text-end">
                                 <img class="banner_figure"
-                                    src="{{ asset('assets/images/cta/' . mt_rand(1, 2) . '.png') }}" alt="gamer-img">
+                                    src="https://o.remove.bg/downloads/31e1c7eb-2719-41d1-9362-270b6da1071d/Screenshot_1-removebg-preview.png" alt="gamer-img">
                             </div>
                         </div>
                     </div>

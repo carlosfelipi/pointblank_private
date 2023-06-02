@@ -40,7 +40,7 @@ class Itemcode extends Controller
             }
         }
         return view('pages.admin.coupon.itemcode', [
-            'itens' => Items::get(),
+            'itens' => Items::orderBy('id','asc')->get(),
             'pins' => Codes::where('type', 4)->orderByDesc('created_at')->paginate('10')
         ]);
     }

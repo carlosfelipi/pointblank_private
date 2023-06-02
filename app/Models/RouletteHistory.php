@@ -9,11 +9,12 @@ class RouletteHistory extends Model
 {
     use HasFactory;
     protected $table='roulette_history';
+    public $timestamps = false;
     protected $fillable = [
         'player_id',
         'random',
         'degrees',
-        'data',
+        'created_at',
         'award'
     ];
    

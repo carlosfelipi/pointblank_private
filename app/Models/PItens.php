@@ -10,5 +10,5 @@ class PItens extends Model
     use HasFactory;
     protected $table = 'player_items';
     public $timestamps = false;
-    protected $primaryKey = 'owner_id';
+    protected $primaryKey = 'object_id';
 }

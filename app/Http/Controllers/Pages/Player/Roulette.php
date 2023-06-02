@@ -27,7 +27,7 @@ class Roulette extends Controller
     public function spinRoulette()
     {
         $player = Account::find(Auth::user()->player_id);
-        $history = RouletteHistory::where('player_id', $player->player_id)->where('data', '=', date('dmY'))->count();
+        $history = RouletteHistory::where('player_id', $player->player_id)->where('created_at', '=', date('dmY'))->count();
 
         if ($history != 0) {
             return 10;
@@ -40,7 +40,7 @@ class Roulette extends Controller
                 'player_id' => $player->player_id,
                 'random' => $random,
                 'degrees' => 320,
-                'data' => date('dmY'),
+                'created_at' => date('dmY'),
                 'award' => "Você ganhou uma P90 Mil Grau por 30 dias!"
             ]);
             if ($rol) {
@@ -63,7 +63,7 @@ class Roulette extends Controller
                 'player_id' => $player->player_id,
                 'random' => $random,
                 'degrees' => 280,
-                'data' => date('dmY'),
+                'created_at' => date('dmY'),
                 'award' => "Você ganhou 10.000 de cash!"
             ]);
             if ($rol) {
@@ -74,7 +74,7 @@ class Roulette extends Controller
                 'player_id' => $player->player_id,
                 'random' => $random,
                 'degrees' => 240,
-                'data' => date('dmY'),
+                'created_at' => date('dmY'),
                 'award' => "Você ganhou uma Aug Cupido por 30 dias!"
             ]);
             if ($rol) {
@@ -97,7 +97,7 @@ class Roulette extends Controller
                 'player_id' => $player->player_id,
                 'random' => $random,
                 'degrees' => 200,
-                'data' => date('dmY'),
+                'created_at' => date('dmY'),
                 'award' => "Você ganhou uma SC-2010 Medical por 30 dias!"
             ]);
             if ($rol) {
@@ -120,7 +120,7 @@ class Roulette extends Controller
                 'player_id' => $player->player_id,
                 'random' => $random,
                 'degrees' => 200,
-                'data' => date('dmY'),
+                'created_at' => date('dmY'),
                 'award' => "Você ganhou uma Kriss Nusantara por 30 dias!"
             ]);
             if ($rol) {
@@ -143,7 +143,7 @@ class Roulette extends Controller
                 'player_id' => $player->player_id,
                 'random' => $random,
                 'degrees' => 60,
-                'data' => date('dmY'),
+                'created_at' => date('dmY'),
                 'award' => "Você ganhou 7.500 de coins!"
             ]);
             if ($rol) {
@@ -154,7 +154,7 @@ class Roulette extends Controller
                 'player_id' => $player->player_id,
                 'random' => $random,
                 'degrees' => 240,
-                'data' => date('dmY'),
+                'created_at' => date('dmY'),
                 'award' => "Você ganhou uma OA-93 Arcade por 30 dias!"
             ]);
             if ($rol) {
@@ -177,7 +177,7 @@ class Roulette extends Controller
                 'player_id' => $player->player_id,
                 'random' => $random,
                 'degrees' => 60,
-                'data' => date('dmY'),
+                'created_at' => date('dmY'),
                 'award' => "Você deu azar, volte amanhã soldado!"
             ]);
         } else {
@@ -185,7 +185,7 @@ class Roulette extends Controller
                 'player_id' => $player->player_id,
                 'random' => 8,
                 'degrees' => 0,
-                'data' => date('dmY'),
+                'created_at' => date('dmY'),
                 'award' => "Você deu azar, volte amanhã soldado!"
             ]);
             $random = 8;
@@ -195,7 +195,7 @@ class Roulette extends Controller
 
     public function receiveRoulette(Request $request)
     {
-        $roleta = RouletteHistory::where('player_id', Auth::user()->player_id)->where('data', '=', date('dmY'))->orderby('id', 'desc')->get();
+        $roleta = RouletteHistory::where('player_id', Auth::user()->player_id)->where('created_at', '=', date('dmY'))->orderby('id', 'desc')->get();
         foreach ($roleta as $rol) {
             return  $rol->award;
         }

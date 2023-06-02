@@ -4183,6 +4183,8 @@ button {
     -webkit-transition: 0.3s all linear;
     -moz-transition: 0.3s all linear;
     transition: 0.3s all linear;
+    width: 108%;
+    max-width: 108%;
 }
 
 .blog-item .blog-inner .blog-content h3 {
@@ -5046,7 +5048,7 @@ button {
     line-height: 50px;
     margin-bottom: 0;
     border: none;
-    width: 100%;
+    width: 110%;
     outline: none;
     color: #fff;
     background-color: rgba(255, 255, 255, 0.1);
@@ -6202,11 +6204,12 @@ button {
     filter: alpha(opacity=100);
     visibility: visible;
     pointer-events: visible;
-    z-index: 99999999;
+    /* z-index: 99999999; */
+    z-index:0;
     -webkit-animation: slideInDown 0.4s forwards;
     animation: slideInDown 0.4s forwards;
-    overflow-y: scroll;
-    background: #000;
+    /* overflow: hidden; */
+    background: #0000008a;
 }
 
 /* .shop-page */
@@ -7806,4 +7809,16 @@ button {
     100% {
         filter: blur(0px);
     }
+}
+
+.my-coin {
+    margin-top: 10px;
+}
+
+.auto {
+    padding-left: 45%;
+}
+
+mx-auto {
+    margin: auto;
 }

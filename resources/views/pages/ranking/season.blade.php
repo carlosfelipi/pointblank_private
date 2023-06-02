@@ -82,8 +82,8 @@
                                             </td>
                                             <td>
                                                 <img
-                                                    title="{{ $patent->namePlayerPt($player->player_rank) }}"
-                                                    src="{{ asset('assets/images/patents/' . $player->player_rank . '.gif') }}" />
+                                                    title="{{ $patent->namePlayerPt($player->player_rank) }}" width="24"
+                                                    src="{{ asset('assets/images/patents/season/rank_' . $player->player_rank . '.png') }}" />
                                                 <small>{{ $patent->namePlayerPt($player->player_rank) }}</small>
                                             </td>
                                             <td>

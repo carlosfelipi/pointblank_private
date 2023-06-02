@@ -44,7 +44,7 @@
                                 <div class="simplebar-content-wrapper" style="height: 100%; overflow: hidden scroll;">
                                     <div class="simplebar-content" style="padding: 0px;">
                                         <li class="back-btn">
-                                            <a href="{{ route('indexAdminPage') }}" title="">
+                                            <a href="{{ route('indexAdminPage') }}">
                                                 <img class="img-fluid" src="/admin/images/logo/logo-icon.png" />
                                             </a>
                                             <div class="mobile-back text-end"><span>Back</span>
@@ -121,6 +121,35 @@
                                                 </li>
                                             </ul>
                                         </li>
+
+
+                                        <li class="sidebar-list">
+                                            <a class="sidebar-link sidebar-title {{ Request::url() == route('webShopAdminPage') || Request::url() == route('webShopItensAdminPage') ? 'active' : '' }}"
+                                                href="javascript:void(0);">
+                                                <i data-feather="shopping-bag"></i>
+                                                <span>Webshop</span>
+                                                <div class="according-menu">
+                                                    <i
+                                                        class="fa fa-angle-{{ Request::url() == route('webShopAdminPage') || Request::url() == route('webShopItensAdminPage') ? 'down' : 'right' }}"></i>
+                                                </div>
+                                            </a>
+                                            <ul class="sidebar-submenu"
+                                                style="display: {{ Request::url() == route('webShopAdminPage') || Request::url() == route('webShopItensAdminPage') ? 'block;' : 'none;' }};">
+                                                <li>
+                                                    <a class="lan-4 {{ Request::url() == route('webShopItensAdminPage') ? 'active' : '' }}"
+                                                        href="{{ route('webShopItensAdminPage') }}">Itens
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="lan-4 {{ Request::url() == route('webShopAdminPage') ? 'active' : '' }}"
+                                                        href="{{ route('webShopAdminPage') }}">Adicionar
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+
+
 
                 </ul>
             </div>
