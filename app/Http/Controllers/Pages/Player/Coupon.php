@@ -7,7 +7,7 @@ use App\Http\Controllers\Modules\Message;
 use App\Models\Account;
 use App\Models\Coupon\Codes;
 use App\Models\Coupon\History;
-use App\Models\PItens;
+use App\Models\Player\PlayerItem;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
@@ -27,7 +27,7 @@ class Coupon extends Component
         $coupon = Codes::where('code', $this->code)->first();
         $player = Account::find(Auth::user()->player_id);
         $couponHistory = History::where('player_id', Auth::user()->player_id)->where('code', $this->code)->count();
-        $playerInventory = PItens::where('item_id', $coupon->item_id)->where('owner_id', $player->player_id)->first();
+        $playerInventory = PlayerItem::where('item_id', $coupon->item_id)->where('owner_id', $player->player_id)->first();
         if ($couponHistory > 0) {
             $this->dispatchBrowserEvent('newMessage', ["msg" => "Você já ativou esse este cupom.", "icon" => "error"]);
             return;
@@ -49,7 +49,7 @@ class Coupon extends Component
             ]);
         } elseif ($coupon->type == 4) {
             if (!$playerInventory) {
-                PItens::insert([
+                PlayerItem::insert([
                     'owner_id' => $player->player_id,
                     'item_id' => $coupon->item_id,
                     'item_name' => $this->item->renameItem($coupon->item_name) . " (COUPON)",

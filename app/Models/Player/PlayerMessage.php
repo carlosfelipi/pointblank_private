@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Player;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PItens extends Model
+class PlayerMessage extends Model
 {
     use HasFactory;
-    protected $table = 'player_items';
     public $timestamps = false;
-    protected $primaryKey = 'object_id';
+    protected $primaryKey = 'owner_id';
+    protected $table = 'player_messages';
 }

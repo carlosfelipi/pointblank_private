@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Modules;
 
 use App\Http\Controllers\Controller;
-use App\Models\PMessage;
+use App\Models\Player\PlayerMessage;
 use Carbon\Carbon;
 
 class Message extends Controller
 {
     public static function sendMessageBoxPlayer($attribute)
     {
-        return PMessage::insert([
+        return PlayerMessage::insert([
             'owner_id' => $attribute['player'],
             'sender_name' => env('APP_NAME', 'Website'),
             'text' => $attribute['message'],
