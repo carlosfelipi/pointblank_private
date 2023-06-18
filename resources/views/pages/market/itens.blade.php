@@ -1,11 +1,11 @@
 <x-slot:title>
-    Mercado Shark
+    Loja
 </x-slot:title>
 <div>
     <section class="pageheader-section">
         <div class="container">
             <div class="section-wrapper text-center text-uppercase">
-                <h2 class="pageheader-title">Mercado Shark</h2>
+                <h2 class="pageheader-title">Loja</h2>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center mb-0">
                         <li class="breadcrumb-item">
@@ -13,7 +13,7 @@
                                 Início
                             </a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">Mercado Shark</li>
+                        <li class="breadcrumb-item active" aria-current="page">Loja</li>
                     </ol>
                 </nav>
             </div>
@@ -66,7 +66,7 @@
                                                 </a>
                                             </h5>
                                             <h6>
-                                                <p>Duração: {{ $modulesItem->convertSecondsToDays($item->count) }}</p>
+                                                <p>Duração: {{ $modulesItem->countDayItem($item->count) }}</p>
                                                 {{-- <p>Categoria: <?= $modulesItem->slot($item->category) ?></p> --}}
                                                 <div class="pay">
                                                     <img src="{{ asset('assets/images/coin.png') }}" />
@@ -95,7 +95,7 @@
                             @empty
                                 <p class="match-prize text-center">
                                     <i class="fa fa-info" aria-hidden="true"></i>
-                                    Mercado Shark em manuntenção aguarde.
+                                    Loja em manuntenção aguarde.
                                 </p>
                             @endforelse
                         </div>
@@ -131,7 +131,7 @@
                                                             </h5>
 
                                                             <p>Duração:
-                                                                {{ $modulesItem->convertSecondsToDays($this->pullItem()->count) }}
+                                                                {{ $modulesItem->countDayItem($this->pullItem()->count) }}
                                                             </p>
                                                             <p>Valor:
                                                                 <img src="{{ asset('assets/images/coin.png') }}" />

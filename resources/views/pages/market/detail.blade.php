@@ -1,5 +1,5 @@
 <x-slot:title>
-    Mercado Shark Item {{ $item->item_name }}
+    Mercado  Item {{ $item->item_name }}
 </x-slot:title>
 <div>
     <section class="pageheader-section">
@@ -36,7 +36,7 @@
                                     <div class="post-content">
                                         <h4><?= $modulesItem->tagBadge($item->tag) ?></h4>
                                         <h4>{{ $item->item_name }}</h4>
-                                        <h6>Duração: {{ $modulesItem->convertSecondsToDays($item->count) }}</h6>
+                                        <h6>Duração: {{ $modulesItem->countDayItem($item->count) }}</h6>
                                         <h6>Categoria: <?= $modulesItem->slot($item->category) ?></h6>
                                         <h6>
                                             <div class="pay">

@@ -72,7 +72,7 @@ class Itens extends Component
                             $this->pullItem()->increment('bought',1);
                             Message::sendMessageBoxPlayer([
                                 'player' => $this->player()->player_id,
-                                'message' => 'Olá ' . $this->player()->player_name . ' o item ' . strtoupper($this->pullItem()->item_name) . ' obtido pelo Mercado Shark foi entregue em seu inventário, já pode ser usado no campo de batalha.'
+                                'message' => 'Olá ' . $this->player()->player_name . ' o item ' . strtoupper($this->pullItem()->item_name) . ' obtido pelo Mercado foi entregue em seu inventário, já pode ser usado no campo de batalha.'
                             ]);
                             $this->dispatchBrowserEvent('newMessage', ["msg" => "Compra do item " . $this->pullItem()->item_name . ", efetuada com sucesso.", "icon" => "success"]);
                         } else {

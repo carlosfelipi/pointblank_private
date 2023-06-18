@@ -56,7 +56,7 @@ class Detail extends Component
                             $this->player()->increment('coin', -$this->item->price);
                             Message::sendMessageBoxPlayer([
                                 'player' => $this->player()->player_id,
-                                'message' => 'Olá ' . $this->player()->player_name . ' o item ' . strtoupper($this->item->item_name) . ' obtido pelo Mercado Shark foi entregue em seu inventário, já pode ser usado no campo de batalha.'
+                                'message' => 'Olá ' . $this->player()->player_name . ' o item ' . strtoupper($this->item->item_name) . ' obtido pelo Mercado  foi entregue em seu inventário, já pode ser usado no campo de batalha.'
                             ]);
                             $this->dispatchBrowserEvent('newMessage', ["msg" => "Compra do item " . $this->item->item_name . ", efetuada com sucesso.", "icon" => "success"]);
                         } else {

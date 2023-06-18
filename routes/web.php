@@ -57,7 +57,7 @@ Route::prefix('ranking')->group(function () {
   Route::get('clan/list', Clan::class)->name('clanPage');
 });
 
-Route::prefix('market')->group(function () {
+Route::prefix('shop')->group(function () {
   Route::get('itens', Itens::class)->name('marketPage');
   Route::get('detail/{item}/{name}', Detail::class)->name('marketDetailPage');
 });

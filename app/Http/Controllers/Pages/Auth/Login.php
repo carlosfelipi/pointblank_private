@@ -78,6 +78,7 @@ class Login extends Component
 
     public function render()
     {
+        //dd($this->hash->md5('cddancddan'));
         return view('pages.auth.login');
     }
 }

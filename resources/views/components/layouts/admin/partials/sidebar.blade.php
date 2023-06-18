@@ -129,7 +129,7 @@
                 <li class="sidebar-main-title">
                     <div>
                         <h6 class="lan-8">Gerenciamento Servidor</h6>
-                        <p class="lan-9">{{ $global->gameservers->ip }}:{{ $global->gameservers->port }}</p>
+                        <p class="lan-9">{{ $global->gameservers->ip ?? '127.0.0.1' }}:{{ $global->gameservers->port ?? '8000' }}</p>
                     </div>
                 </li>
 

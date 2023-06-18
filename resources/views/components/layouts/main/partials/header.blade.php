@@ -4,7 +4,7 @@
             <div class="brand-logo d-none d-lg-inline-block">
                 <div class="logo">
                     <a href="{{ route('indexPage') }}">
-                        <img class="logo-header " src="{{ asset('assets/images/logo.svg') }}" alt="logo" />
+                        <img class="logo-header " src="{{ asset('assets/images/logo.png') }}" alt="logo" />
                     </a>
                 </div>
             </div>
