@@ -20,8 +20,8 @@ php artisan key:generate
 ```bash
 composer install
 ```
-4. Renomeie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente, incluindo as informações do banco de dados.
-5. Adicione o banco de dados do website.
+5. Renomeie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente, incluindo as informações do banco de dados.
+6. Adicione o banco de dados do website.
 
 ## Features
 
