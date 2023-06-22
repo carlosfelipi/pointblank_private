@@ -91,7 +91,7 @@
                                                         ItemName: '{{ $item->item_name }}',
                                                         ItemTag: '{{ $item->tag }}',
                                                         ItemCategory: '{{ $item->category }}',
-                                                        ItemCount: '{{ $item->count < 86400 ? $item->count : $item->count / 24 / 60 / 60 }}',
+                                                        ItemCount: '{{ $item->count < 86400 ? $item->count : $modulesItem->countDayItemTwo($item->count) }}',
                                                         ItemPrice: '{{ $item->price }}',
                                                         ItemType: '{{ $item->type }}',
                                                         ItemState: '{{ $item->state == true ? '1' : '2' }}'})"
