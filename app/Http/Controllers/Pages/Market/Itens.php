@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Pages\Market;
 use App\Http\Controllers\Modules\Item;
 use App\Http\Controllers\Modules\Message;
 use App\Models\Account;
-use App\Models\PItens;
+use App\Models\Player\PlayerItem;
 use App\Models\WebshopItens;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -40,7 +40,7 @@ class Itens extends Component
 
     public function inventory()
     {
-        return PItens::where('item_id', $this->pullItem()->item_id)->where('owner_id', $this->player()->player_id)->first();
+        return PlayerItem::where('item_id', $this->pullItem()->item_id)->where('owner_id', $this->player()->player_id)->first();
     }
 
     public function purchaseItem()
@@ -60,7 +60,7 @@ class Itens extends Component
                             $this->dispatchBrowserEvent('newMessage', ["msg" => "Você possui esse item permanente em seu inventário, impossivel obter mais dias.", "icon" => "info"]);
                         }
                     } else {
-                        $newItem = new PItens();
+                        $newItem = new PlayerItem();
                         $newItem->owner_id = $this->player()->player_id;
                         $newItem->item_id = $this->pullItem()->item_id;
                         $newItem->item_name = strtoupper($this->pullItem()->item_name . ' (webshop)');
